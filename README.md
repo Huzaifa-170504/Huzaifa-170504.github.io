@@ -2,6 +2,8 @@
 
 A responsive, accessible personal portfolio focused on artificial intelligence, machine learning, and data science.
 
+**Live portfolio:** [https://huzaifa-170504.github.io/](https://huzaifa-170504.github.io/)
+
 ## Highlights
 
 - Premium dark/light visual system with responsive navigation
@@ -27,6 +29,6 @@ npm run build:github
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/deploy-pages.yml` builds and deploys the portfolio whenever `main` is updated. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.
+The workflow in `.github/workflows/deploy-pages.yml` builds and deploys the portfolio whenever `main` is updated. The repository uses **GitHub Actions** as its Pages source.
 
 © 2026 Huzaifa Waqar Butt
