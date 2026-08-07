@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -199,7 +200,9 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Huzaifa Waqar Butt — home">
-          <span className="brand-mark">HW</span>
+          <span className="brand-mark">
+            <Image src={`${publicBasePath}/huzaifa-avatar.webp`} alt="" width={192} height={192} />
+          </span>
           <span className="brand-name">Huzaifa Waqar Butt</span>
         </a>
 
@@ -297,6 +300,21 @@ export default function Home() {
           </div>
 
           <div className="about-layout">
+            <figure className="about-portrait reveal">
+              <div className="about-portrait-frame">
+                <Image
+                  src={`${publicBasePath}/huzaifa-waqar-butt.webp`}
+                  alt="Huzaifa Waqar Butt in a navy suit"
+                  width={900}
+                  height={1125}
+                />
+              </div>
+              <figcaption>
+                <span>Huzaifa Waqar Butt</span>
+                <strong>AI · ML · Data Science</strong>
+              </figcaption>
+            </figure>
+
             <div className="about-copy reveal">
               <p className="lead-copy">
                 I work at the intersection of <em>machine intelligence</em>, data, and systems engineering.
@@ -572,7 +590,9 @@ export default function Home() {
 
       <footer>
         <a className="brand" href="#home">
-          <span className="brand-mark">HW</span>
+          <span className="brand-mark">
+            <Image src={`${publicBasePath}/huzaifa-avatar.webp`} alt="" width={192} height={192} />
+          </span>
           <span className="brand-name">Huzaifa Waqar Butt</span>
         </a>
         <p>AI · Machine Learning · Data Science</p>

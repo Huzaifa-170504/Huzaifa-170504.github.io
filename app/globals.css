@@ -123,17 +123,22 @@ svg {
 }
 
 .brand-mark {
-  display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
-  place-items: center;
+  display: block;
+  width: 2.45rem;
+  height: 2.45rem;
+  overflow: hidden;
   border: 1px solid var(--line-strong);
+  border-radius: 50%;
   background: linear-gradient(145deg, color-mix(in srgb, var(--cyan) 14%, transparent), transparent);
-  color: var(--text);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: -0.05em;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cyan) 7%, transparent);
+  flex: 0 0 auto;
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand-name {
@@ -568,13 +573,89 @@ svg {
 .about-layout {
   display: grid;
   max-width: 1260px;
-  grid-template-columns: minmax(0, 1fr) minmax(370px, 0.85fr);
-  gap: clamp(4rem, 10vw, 9rem);
+  grid-template-columns: minmax(235px, 0.7fr) minmax(0, 1.05fr) minmax(320px, 0.85fr);
+  align-items: start;
+  gap: clamp(2.5rem, 4.5vw, 4.5rem);
   margin: 0 auto;
 }
 
 .about-copy {
-  padding-left: min(9vw, 140px);
+  padding-left: 0;
+}
+
+.about-portrait {
+  position: relative;
+  margin: 0;
+}
+
+.about-portrait::before {
+  position: absolute;
+  z-index: 0;
+  top: -18px;
+  right: -18px;
+  width: 42%;
+  height: 42%;
+  border-top: 1px solid color-mix(in srgb, var(--cyan) 55%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--cyan) 55%, transparent);
+  content: "";
+}
+
+.about-portrait-frame {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-solid);
+  box-shadow: var(--shadow);
+}
+
+.about-portrait-frame::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 62%, rgba(6, 8, 13, 0.2));
+  content: "";
+  pointer-events: none;
+}
+
+.about-portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.about-portrait:hover .about-portrait-frame img {
+  transform: scale(1.018);
+}
+
+.about-portrait figcaption {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-portrait figcaption span,
+.about-portrait figcaption strong {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.about-portrait figcaption span {
+  color: var(--text);
+}
+
+.about-portrait figcaption strong {
+  color: var(--faint);
+  font-weight: 500;
+  text-align: right;
 }
 
 .about-copy p {
@@ -1285,6 +1366,9 @@ footer p { margin: 0; }
   .nav-links { gap: 1.1rem; }
   .header-cta { display: none; }
   .neural-mark { right: 5%; opacity: 0.6; }
+  .about-layout { grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr); }
+  .about-layout .stats-grid { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); }
+  .stats-grid article { min-height: 150px; }
   .project-card { grid-template-columns: 55px minmax(240px, 0.8fr) minmax(0, 1.2fr); }
   .project-content { padding: 2.5rem; }
   .contact-section { grid-template-columns: 1fr 0.85fr; gap: 4rem; }
@@ -1326,7 +1410,9 @@ footer p { margin: 0; }
   .scroll-cue { display: none; }
   .section-heading { grid-template-columns: 55px 1fr; }
   .about-layout { grid-template-columns: 1fr; gap: 4rem; }
+  .about-portrait { width: min(100%, 430px); margin-left: 55px; }
   .about-copy { padding-left: 55px; }
+  .about-layout .stats-grid { grid-column: auto; grid-template-columns: repeat(2, 1fr); }
   .skill-grid { grid-template-columns: 1fr; }
   .skill-card { min-height: auto; }
   .skill-card h3 { margin-top: 3rem; }
@@ -1358,6 +1444,7 @@ footer p { margin: 0; }
   .section-heading { grid-template-columns: 1fr; gap: 1.3rem; }
   .section-index { padding: 0; }
   .section-heading h2, .contact-intro h2 { font-size: clamp(2.55rem, 12vw, 3.7rem); }
+  .about-portrait { width: 100%; margin-left: 0; }
   .about-copy { padding-left: 0; }
   .stats-grid article { min-height: 145px; padding: 1.1rem; }
   .stats-grid strong { margin-bottom: 2.2rem; font-size: 2rem; }
