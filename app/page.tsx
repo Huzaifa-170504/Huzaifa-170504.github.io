@@ -5,7 +5,6 @@ import Image from "next/image";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Credentials", href: "#credentials" },
   { label: "Contact", href: "#contact" },
@@ -18,7 +17,6 @@ const projectFilters = [
   { id: "ai", label: "AI / ML" },
   { id: "vision", label: "Computer vision" },
   { id: "security", label: "Cybersecurity" },
-  { id: "data", label: "Data science" },
 ];
 
 const projects = [
@@ -49,20 +47,6 @@ const projects = [
     accent: "violet",
     status: "Applied research",
     link: "https://github.com/Huzaifa-170504/Mamba-YOLO",
-  },
-  {
-    number: "03",
-    title: "TradePulse AI",
-    short: "ML Automation",
-    description:
-      "An independent AI product initiative exploring data-driven market analysis, structured signal evaluation, and automation-oriented decision support.",
-    contribution:
-      "Worked across ML-oriented data design, prompt workflows, research translation, testing, and iterative automation design.",
-    tags: ["Python", "Data Analysis", "ML", "Automation", "Research"],
-    categories: ["ai", "data"],
-    accent: "blue",
-    status: "Independent initiative",
-    link: "https://github.com/Huzaifa-170504",
   },
 ];
 
@@ -321,8 +305,8 @@ export default function Home() {
               </p>
               <p>
                 My path combines a BS in Information Technology with hands-on work in deep anomaly detection,
-                computer vision, model training, data analysis, and operational field leadership. I enjoy moving
-                beyond notebooks—connecting models to systems that people can actually use.
+                computer vision, model training, and data analysis. I enjoy moving beyond notebooks—connecting
+                models to systems that people can actually use.
               </p>
               <p>
                 I&apos;m especially interested in AI/ML engineering, data science, intelligent automation, and research
@@ -348,7 +332,7 @@ export default function Home() {
                 <span>BSIT graduate</span>
               </article>
               <article>
-                <strong>03</strong>
+                <strong>02</strong>
                 <span>Featured AI projects</span>
               </article>
               <article>
@@ -384,62 +368,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section experience-section" id="experience">
-          <div className="section-heading reveal">
-            <span className="section-index">03</span>
-            <div>
-              <p className="eyebrow">Experience</p>
-              <h2>Work shaped by<br />ownership and impact.</h2>
-            </div>
-          </div>
-
-          <div className="timeline">
-            <article className="timeline-item reveal">
-              <div className="timeline-date">Aug 2025 — May 2026</div>
-              <div className="timeline-marker"><span /></div>
-              <div className="timeline-content">
-                <div className="timeline-title-row">
-                  <div>
-                    <p>MALC Tuberculosis Control Program</p>
-                    <h3>District Field Supervisor</h3>
-                  </div>
-                  <span>Bhimber, AJK</span>
-                </div>
-                <p>
-                  Coordinated district-level TB screening operations, stakeholder engagement, patient follow-ups,
-                  TPT distribution, field reporting, and data validation across healthcare and community settings.
-                </p>
-                <ul>
-                  <li>Led field coordination for chest screening and Xpert testing camps.</li>
-                  <li>Managed operational records, follow-up workflows, and district reporting.</li>
-                  <li>Connected health-program data with practical decisions and stakeholder communication.</li>
-                </ul>
-              </div>
-            </article>
-
-            <article className="timeline-item reveal">
-              <div className="timeline-date">2025 — 2026</div>
-              <div className="timeline-marker"><span /></div>
-              <div className="timeline-content">
-                <div className="timeline-title-row">
-                  <div>
-                    <p>TradePulse AI · Independent initiative</p>
-                    <h3>ML & AI Automation Engineer</h3>
-                  </div>
-                  <span>Remote</span>
-                </div>
-                <p>
-                  Explored machine-learning workflows, research-to-operations translation, prompt-based automation,
-                  structured data design, and iterative testing for an AI-assisted analytical product concept.
-                </p>
-              </div>
-            </article>
-          </div>
-        </section>
-
         <section className="section projects-section" id="projects">
           <div className="section-heading projects-heading reveal">
-            <span className="section-index">04</span>
+            <span className="section-index">03</span>
             <div>
               <p className="eyebrow">Selected work</p>
               <h2>Projects built to<br />solve, learn, and scale.</h2>
@@ -487,7 +418,7 @@ export default function Home() {
 
         <section className="section credentials-section" id="credentials">
           <div className="section-heading reveal">
-            <span className="section-index">05</span>
+            <span className="section-index">04</span>
             <div>
               <p className="eyebrow">Education & credentials</p>
               <h2>A foundation built<br />for continuous learning.</h2>
