@@ -11,6 +11,8 @@ const navItems = [
 ];
 
 const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const latestResumeFolderUrl =
+  "https://drive.google.com/drive/folders/1_d3ZEaBIyb21um-2mV39OzpaIGqNgoqH?usp=sharing";
 
 const projectFilters = [
   { id: "all", label: "All work" },
@@ -46,7 +48,7 @@ const projects = [
     categories: ["ai", "vision"],
     accent: "violet",
     status: "Applied research",
-    link: "https://github.com/Huzaifa-170504/Mamba-YOLO",
+    link: "https://github.com/Huzaifa-170504/banana-instance-segmentation-yolo11",
   },
 ];
 
@@ -256,8 +258,14 @@ export default function Home() {
               <a className="button button-primary" href="#projects">
                 Explore my work <ArrowIcon />
               </a>
-              <a className="button button-secondary" href={`${publicBasePath}/Huzaifa_Waqar_Butt_CV.pdf`} download>
-                Download résumé
+              <a
+                className="button button-secondary"
+                href={latestResumeFolderUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open the latest résumé in Google Drive"
+              >
+                Download latest résumé
               </a>
             </div>
           </div>
